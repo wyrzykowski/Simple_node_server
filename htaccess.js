@@ -8,7 +8,7 @@ exports.getLink = function (pathF) {
         }
         else{ // if error 
          console.log(".access not found")
-         return path;
+         return pathF;
         }
        
     
@@ -16,6 +16,6 @@ exports.getLink = function (pathF) {
 
 
     console.log("htaccess mdoule working...");
-    return path;
+    return pathF;
  
 };
