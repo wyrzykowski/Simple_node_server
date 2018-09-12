@@ -15,7 +15,7 @@ fs.access(path, fs.constants.F_OK, (err) => {
     
      const fs = require('fs');
      
-     fs.readdirSync('/').forEach(file => {
+     fs.readdirSync('.').forEach(file => {
        console.log(file);
      })
     //end of read file
