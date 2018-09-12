@@ -16,10 +16,17 @@ fs.access(path, fs.constants.F_OK, (err) => {
 
     res.end()
  
-});
-}else{
- res.writeHead(200, {'Content-Type': 'text/html'});
- res.write("nie znaleziono!");
+    });
+}
+else{
+    path='demo.html';
+    fs.readFile(path, function(err, data) {
+        res.writeHead(200, {'Content-Type': 'text/html'});
+        res.write(data);
+    
+    
+        res.end()
+    });
 }
 path='index.html';//to refresh path othervise will be still other than home page
 
