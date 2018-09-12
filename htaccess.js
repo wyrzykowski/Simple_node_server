@@ -1,4 +1,5 @@
 // htaccess module to access file by link friendly name 
+var fs = require('fs');
 exports.getLink = function (pathF) {
 
     fs.access('.htaccess', fs.constants.F_OK, (err) => {
