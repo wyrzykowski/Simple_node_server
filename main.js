@@ -12,7 +12,7 @@ if(req.url!='/' &&  req.url!='') { //reading path
 
 fs.access(path, fs.constants.F_OK, (err) => {
     if(!err){ 
-    console.log(myDateTime());
+    console.log(dt.myDateTime());
 
      fs.readFile(path, function(err, data) {
         res.writeHead(200, {'Content-Type': 'text/html'});
