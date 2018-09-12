@@ -1,36 +1,22 @@
+// HTTP node's Server
 var http = require('http');
 var fs = require('fs');
 var path = 'index.html';
 http.createServer(function (req, res) {
 
 if(req.url!='/' &&  req.url!='') { // test tutaj
-path = req.url;console.log(typeof path);path=path.substr(1, path.length);}
+path = req.url;
+path=path.substr(1, path.length);} // substr to cut "/" from path string
 
 fs.access(path, fs.constants.F_OK, (err) => {
  if(!err){ 
-     //start read file
-     var filesList=[];
-     var i =0;
-     fs.readdirSync('.').forEach(file => {
-       filesList[i]=file;
-       i++;
-     })
-
-    filesList.forEach(returned=>{
-        console.log(returned);
-    })
-    //end of read file
-
  fs.readFile(path, function(err, data) {
     res.writeHead(200, {'Content-Type': 'text/html'});
     res.write(data);
-
-
     res.end()
- 
     });
 }
-else{
+else{ // if error 
     path='404.html';
     fs.readFile(path, function(err, data) {
         res.writeHead(200, {'Content-Type': 'text/html'});
