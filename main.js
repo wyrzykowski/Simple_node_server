@@ -1,13 +1,15 @@
 // HTTP node's Server
 var http = require('http');
-var dt = require('./testModule.js');
+var htaccessMod = require('./htaccess.js');
 var fs = require('fs');
 var path = 'index.html';
 http.createServer(function (req, res) {
 
+    
 if(req.url!='/' &&  req.url!='') { //reading path 
     path = req.url;
     path=path.substr(1, path.length);// substr to cut "/" from path string
+    path=htaccessMod.getLink(path);
 } 
 
 fs.access(path, fs.constants.F_OK, (err) => {
