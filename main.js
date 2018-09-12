@@ -9,15 +9,16 @@ path = req.url;console.log(typeof path);path=path.substr(1, path.length);}
 fs.access(path, fs.constants.F_OK, (err) => {
  if(!err){ 
      //start read file
-     
- 
- 
-    
-     const fs = require('fs');
-     
+     var filesList=[];
+     var i =0;
      fs.readdirSync('.').forEach(file => {
-       console.log(file);
+       fileList[i]=file;
+       i++;
      })
+
+    fileList.forEach(returned=>{
+        console.log(returned);
+    })
     //end of read file
 
  fs.readFile(path, function(err, data) {
