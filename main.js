@@ -3,7 +3,7 @@ var fs = require('fs');
 var path = 'index.html';
 http.createServer(function (req, res) {
 
-if(req.url!='/' &&  req.url.endsWith(".html")) {
+if(req.url!='/' &&  req.url!='') { // test tutaj
 path = req.url;console.log(typeof path);path=path.substr(1, path.length);}
 
 fs.access(path, fs.constants.F_OK, (err) => {
