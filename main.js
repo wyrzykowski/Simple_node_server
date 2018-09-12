@@ -12,11 +12,11 @@ fs.access(path, fs.constants.F_OK, (err) => {
      var filesList=[];
      var i =0;
      fs.readdirSync('.').forEach(file => {
-       fileList[i]=file;
+       filesList[i]=file;
        i++;
      })
 
-    fileList.forEach(returned=>{
+    filesList.forEach(returned=>{
         console.log(returned);
     })
     //end of read file
