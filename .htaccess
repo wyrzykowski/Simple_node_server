@@ -1,0 +1,12 @@
+### PROTECT FILES ###
+<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+RewriteEngine on
+RewriteRule fakfajzer-firma-dekarsko-budowlana-remonty-dachy index.html
+RewriteRule o-firmie-fakfajzer about.html
+RewriteRule oferta-firmy-fakfajzer offer.html
+RewriteRule galeria-dachow-co-robimy-fakfajzer gallery.html
+RewriteRule kontakt-firma-fakfajzer-radoslaw-wojcik contact.html
