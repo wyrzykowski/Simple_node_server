@@ -12,7 +12,7 @@ if(req.url!='/' &&  req.url!='') { //reading path
     
     path= new Promise(function(resolve,reject){
         
-        htaccessMod.getLink(path);
+        resolve(htaccessMod.getLink(path));
     });
 
 } 
