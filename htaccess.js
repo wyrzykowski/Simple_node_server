@@ -2,7 +2,7 @@
 var fs = require('fs');
 exports.getLink = function (pathF) {
     var stringPath;
-    
+    let p = new Promise(function(resolve,reject){
     fs.access('.htaccess', fs.constants.F_OK, (err) => {
         if(!err){ 
             console.log("htaccess mdoule working...");
@@ -22,9 +22,9 @@ exports.getLink = function (pathF) {
                     console.log("pos" + pos);
                     stringPath = strData.substring(startPos, pos);
                     console.log("wlasciwa:" + stringPath);
-                    return "offer.html";
+                    resolve( "offer.html");
                 }
-                else return pathF;
+                else  resolve(path);
             }
             else console.log('Rewrite Engine OFF');
            
@@ -39,8 +39,11 @@ exports.getLink = function (pathF) {
        
     
         });
-
+    })
 
    
    // return "offer.html";
+   p.then(function(val){
+       return val;
+   })
 };
