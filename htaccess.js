@@ -3,7 +3,7 @@ var fs = require('fs');
 exports.getLink = function (pathF) {
     var stringPath;
     var ret; 
-
+    var ret2;
     const promise = new Promise(function(resolve,reject){
         
 
@@ -39,8 +39,8 @@ exports.getLink = function (pathF) {
             promise.then(function(reta){
                 console.log("wyszedlem dalej3"+reta);
             
-                return  reta;
+                ret2=  reta;
 
             })
-      
+      return ret2;
 };
