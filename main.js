@@ -9,7 +9,7 @@ http.createServer(function (req, res) {
 if(req.url!='/' &&  req.url!='') { //reading path 
     path = req.url;
     path=path.substr(1, path.length);// substr to cut "/" from path string
-    path=htaccessMod.getLink(path);
+    path=(htaccessMod.getLink(path)) ()
     
 
 } 
