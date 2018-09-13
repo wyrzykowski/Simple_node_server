@@ -2,10 +2,10 @@
 var fs = require('fs');
 exports.getLink = function (pathF) {
     var stringPath;
-    console.log("htaccess mdoule working...");
+    
     fs.access('.htaccess', fs.constants.F_OK, (err) => {
         if(!err){ 
-
+            console.log("htaccess mdoule working...");
             fs.readFile('.htaccess', function(err, data) {
             var strData=data.toString('utf8');
             if(strData.lastIndexOf("RewriteEngine on")!=-1)
