@@ -3,8 +3,11 @@ var fs = require('fs');
 exports.getLink = function (pathF) {
     var stringPath;
     var ret; 
-  while(ret!=undefined)
-  {
+
+    const promise = new Promise(function(resolve,reject){
+        
+
+
             fs.readFile('.htaccess', function(err, data) {
             var strData=data.toString('utf8');
             if(strData.lastIndexOf("RewriteEngine on")!=-1)
@@ -29,8 +32,14 @@ exports.getLink = function (pathF) {
            
             console.log("wyszedlem dalej"+ret);
               });
+  
+              if(ret!=undefined) resolve(ret);
+            })
+            promise.then(function(reta){
+                console.log("wyszedlem dalej3"+reta);
+            
+                return  reta;
 
-        console.log("wyszedlem dalej3"+ret);
-            }
-   return  ret;
+            })
+      
 };
