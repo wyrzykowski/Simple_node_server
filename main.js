@@ -9,22 +9,23 @@ http.createServer(function (req, res) {
 if(req.url!='/' &&  req.url!='') { //reading path 
     path = req.url;
     path=path.substr(1, path.length);// substr to cut "/" from path string
+    const promise = new Promise(function(resolve,reject){ //musi przerobic ten link wiec musi byc synchronicznie
+        path=htaccessMod.getLink(path);
+        console.log("zwrocilem:"+path);
+        if(path!=undefined)
+        {
+             console.log("zwrocilem:"+path);
+        resolve(htaccessMod.getLink(path));
+        }
+       
+    });
 } else{
     path='index.html';//to refresh path othervise will be still other than home page 
 }
 
-const promise = new Promise(function(resolve,reject){
-    path=htaccessMod.getLink(path);
-    console.log("zwrocilem:"+path);
-    if(path!=undefined)
-    {
-         console.log("zwrocilem:"+path);
-    resolve(htaccessMod.getLink(path));
-    }
-   
-});
 
-promise.then(function(path){
+
+promise.then(function(path){ //jesli spelnni sie oboetnica i resolve cos zwroci albo wgl obietnica sie nie stowrzy
 console.log("in main path is:"+path);
 fs.access(path, fs.constants.F_OK, (err) => {
     if(!err){ 

@@ -3,10 +3,7 @@ var fs = require('fs');
 exports.getLink = function (pathF) {
     var stringPath;
     var ret; 
-    var ret2;
    return  new Promise(function(resolve,reject){
-        
-
 
             fs.readFile('.htaccess', function(err, data) {
             var strData=data.toString('utf8');
@@ -25,22 +22,19 @@ exports.getLink = function (pathF) {
                     stringPath = strData.substring(startPos, pos);
                     console.log("wlasciwa:" + stringPath);
                     console.log("htaccess mdoule working..."+stringPath);
-                    ret= stringPath;
+                    ret= stringPath; // wartosc do zwrocenia
                 }
                 else{console.log("htaccess mdoule working..."+pathF);    ret = pathF;}
             } else console.log('Rewrite Engine OFF');
            
             console.log("wyszedlem dalej"+ret);
-            if(ret!=undefined) resolve(ret);
+            if(ret!=undefined) resolve(ret); 
               });
   
             
             })
             promise.then(function(reta){
-                console.log("wyszedlem dalej3"+reta);
-            
                 return reta;
-
             })
  
 };
