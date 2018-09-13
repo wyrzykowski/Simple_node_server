@@ -16,7 +16,7 @@ exports.getLink = function (pathF) {
                 {
                     var startPos = pos;
                     pos=strData.lastIndexOf('\n');
-                   var stringPath = substring(startPos, pos);
+                   var stringPath = strData.substring(startPos, pos);
                     console.log(stringPath);
                 }
             }
