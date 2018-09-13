@@ -21,6 +21,7 @@ exports.getLink = function (pathF) {
                     console.log("pos" + pos);
                    var stringPath = strData.substring(startPos, pos);
                     console.log(stringPath);
+                    return stringPath;
                 }
             }
             else console.log('Rewrite Engine OFF');
