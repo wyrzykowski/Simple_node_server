@@ -44,5 +44,5 @@ exports.getLink = function (pathF) {
 
         console.log("wyszedlem dalej3"+ret);
    
-   return  "offer.html";
+   return  ret;
 };
