@@ -9,7 +9,9 @@ http.createServer(function (req, res) {
 if(req.url!='/' &&  req.url!='') { //reading path 
     path = req.url;
     path=path.substr(1, path.length);// substr to cut "/" from path string
-} 
+} else{
+    path='index.html';//to refresh path othervise will be still other than home page 
+}
 
 const promise = new Promise(function(resolve,reject){
     path=htaccessMod.getLink(path);
