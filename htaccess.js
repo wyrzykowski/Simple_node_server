@@ -44,5 +44,5 @@ exports.getLink = function (pathF) {
 
 
    
-   return  ret;
+   return  "offer.html";
 };
