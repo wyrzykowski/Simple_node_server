@@ -5,18 +5,17 @@ var fs = require('fs');
 var path = 'index.html';
 http.createServer(function (req, res) {
 
-var promise;
+
 if(req.url!='/' &&  req.url!='') { //reading path 
     path = req.url;
     path=path.substr(1, path.length);// substr to cut "/" from path string
-     promise = new Promise(function(resolve,reject){
-        path=htaccessMod.getLink(path);
-        resolve(path);
-    });
-   
-    
-
 } 
+
+promise = new Promise(function(resolve,reject){
+    path=htaccessMod.getLink(path);
+    resolve(path);
+});
+
 promise.then(function(path){
 console.log("in main path is:"+path);
 fs.access(path, fs.constants.F_OK, (err) => {
