@@ -24,7 +24,7 @@ exports.getLink = function (pathF) {
                     console.log("wlasciwa:" + stringPath);
                     return "offer.html";
                 }
-                else resolve(pathF);
+                else return pathF;
             }
             else console.log('Rewrite Engine OFF');
            
