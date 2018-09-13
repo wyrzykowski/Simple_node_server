@@ -23,10 +23,10 @@ exports.getLink = function (pathF) {
                     console.log("pos" + pos);
                     stringPath = strData.substring(startPos, pos);
                     console.log("wlasciwa:" + stringPath);
-                    console.log("htaccess mdoule working...");
+                    console.log("htaccess mdoule working..."+stringPath);
                     return "offer.html";
                 }
-                else{console.log("htaccess mdoule working..."); return pathF;}
+                else{console.log("htaccess mdoule working..."+pathF); return pathF;}
             }
             else console.log('Rewrite Engine OFF');
            
