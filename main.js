@@ -13,8 +13,8 @@ if(req.url!='/' &&  req.url!='') { //reading path
 
 const promise = new Promise(function(resolve,reject){
     path=htaccessMod.getLink(path);
+    resolve(htaccessMod.getLink(path));
     console.log("zwrocilem:"+path);
-    resolve('demo.html');
 });
 
 promise.then(function(path){
