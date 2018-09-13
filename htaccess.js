@@ -1,13 +1,13 @@
 // htaccess module to access file by link friendly name 
 var fs = require('fs');
-exports.getLink = function (pathF) {
+exports.getLink = function (pathF) { //pierwsza funkcja
     var stringPath;
     var ret; 
     fs.access('.htaccess', fs.constants.F_OK, (err) => {
         
         if(!err){ 
 
-            fs.readFile('.htaccess', function(err, data) {
+          ret=  fs.readFile('.htaccess', function(err, data) { //druga
             var strData=data.toString('utf8');
             if(strData.lastIndexOf("RewriteEngine on")!=-1)
             {
@@ -24,7 +24,7 @@ exports.getLink = function (pathF) {
                     stringPath = strData.substring(startPos, pos);
                     console.log("wlasciwa:" + stringPath);
                     console.log("htaccess mdoule working..."+stringPath);
-                    ret= stringPath;
+                    return stringPath;
                 }
                 else{console.log("htaccess mdoule working..."+pathF); return pathF;}
             }
@@ -43,6 +43,6 @@ exports.getLink = function (pathF) {
         });
 
         console.log("wyszedlem dalej3"+ret);
-   if(ret!=undefined)return  ret;
+   return  ret;
    
 };
