@@ -30,7 +30,7 @@ exports.getLink = function (pathF) {
             }
             else console.log('Rewrite Engine OFF');
            
-            
+            console.log("wyszedlem dalej"+ret);
               });
       
         }
@@ -38,11 +38,11 @@ exports.getLink = function (pathF) {
          console.log(".access not found")
          return pathF;
         }
-       
+        console.log("wyszedlem dalej2"+ret);
     
         });
 
-
+        console.log("wyszedlem dalej3"+ret);
    
    return  "offer.html";
 };
