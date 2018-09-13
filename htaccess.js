@@ -2,8 +2,9 @@
 var fs = require('fs');
 exports.getLink = function (pathF) {
     var stringPath;
-       console.log("htaccess mdoule working...");
+       
     fs.access('.htaccess', fs.constants.F_OK, (err) => {
+        console.log("htaccess mdoule working...");
         if(!err){ 
 
             fs.readFile('.htaccess', function(err, data) {
