@@ -21,7 +21,7 @@ exports.getLink = function (pathF) {
                     console.log("pos" + pos);
                     stringPath = strData.substring(startPos, pos);
                     console.log("wlasciwa:" + stringPath);
-                    return stringPath;
+                    return "offer.html";
                 }
             }
             else console.log('Rewrite Engine OFF');
@@ -40,6 +40,6 @@ exports.getLink = function (pathF) {
 
 
     console.log("htaccess mdoule working...");
-    return "offer.html";
+   // return "offer.html";
  
 };
