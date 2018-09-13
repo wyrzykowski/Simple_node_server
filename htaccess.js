@@ -11,16 +11,16 @@ exports.getLink = function (pathF) {
             if(strData.lastIndexOf("RewriteEngine on")!=-1)
             {
                 console.log(' Rewrite EngineOn');
-
+                if(strData.lastIndexOf(pathF)!=-1)
+                {
+                    console.log(pathF);
+                }
             }
             else console.log('Rewrite Engine OFF');
            
             
               });
       
-
-
-         console.log("no czytam");
         }
         else{ // if error 
          console.log(".access not found")
