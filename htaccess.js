@@ -11,7 +11,9 @@ exports.getLink = function (pathF) {
             if(strData.lastIndexOf("RewriteEngine on")!=-1)
             {
                 console.log(' Rewrite EngineOn');
+
             }
+            else console.log('Rewrite Engine OFF');
            
             
               });
