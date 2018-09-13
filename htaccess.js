@@ -20,7 +20,7 @@ exports.getLink = function (pathF) {
                     pos=strData.indexOf('\n',startPos);
                     console.log("pos" + pos);
                    var stringPath = strData.substring(startPos, pos);
-                    console.log(stringPath);
+                    console.log("wlasciwa:" + stringPath);
                     return stringPath;
                 }
             }
