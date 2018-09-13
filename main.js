@@ -15,9 +15,10 @@ const promise = new Promise(function(resolve,reject){
     path=htaccessMod.getLink(path);
     if(path!=undefined)
     {
+        console.log("zwrocilem:"+path);
     resolve(htaccessMod.getLink(path));
     }
-    console.log("zwrocilem:"+path);
+   
 });
 
 promise.then(function(path){
