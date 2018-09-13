@@ -10,6 +10,7 @@ if(req.url!='/' &&  req.url!='') { //reading path
     path = req.url;
     path=path.substr(1, path.length);// substr to cut "/" from path string
     path=htaccessMod.getLink(path);
+    console.log("in main path is:"+path);
 } 
 
 fs.access(path, fs.constants.F_OK, (err) => {
