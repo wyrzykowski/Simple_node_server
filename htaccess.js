@@ -31,9 +31,10 @@ exports.getLink = function (pathF) {
             } else console.log('Rewrite Engine OFF');
            
             console.log("wyszedlem dalej"+ret);
+            if(ret!=undefined) resolve(ret);
               });
   
-            resolve(ret);
+            
             })
             promise.then(function(reta){
                 console.log("wyszedlem dalej3"+reta);
