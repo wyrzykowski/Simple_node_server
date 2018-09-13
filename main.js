@@ -5,7 +5,7 @@ var fs = require('fs');
 var path = 'index.html';
 http.createServer(function (req, res) {
 
-    const promise;
+var promise;
 if(req.url!='/' &&  req.url!='') { //reading path 
     path = req.url;
     path=path.substr(1, path.length);// substr to cut "/" from path string
