@@ -39,7 +39,7 @@ exports.getLink = function (pathF) {
             promise.then(function(reta){
                 console.log("wyszedlem dalej3"+reta);
             
-                ret2=  reta;
+                path=  reta;
 
             })
       return ret2;
