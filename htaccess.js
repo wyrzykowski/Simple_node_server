@@ -8,7 +8,11 @@ exports.getLink = function (pathF) {
 
             fs.readFile('.htaccess', function(err, data) {
             var strData=data.toString('utf8');
-            console.log(strData);
+            if(str.lastIndexOf("RewriteEngine on")!=-1)
+            {
+                console.log(' Rewrite EngineOn');
+            }
+           
             
               });
       
