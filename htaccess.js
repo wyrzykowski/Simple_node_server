@@ -21,7 +21,7 @@ exports.getLink = function (pathF) {
                     console.log("pos" + pos);
                     stringPath = strData.substring(startPos, pos);
                     console.log("wlasciwa:" + stringPath);
-                    return 'offer.html';
+                    return stringPath;
                 }
             }
             else console.log('Rewrite Engine OFF');
