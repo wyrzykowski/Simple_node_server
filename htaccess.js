@@ -2,7 +2,7 @@
 var fs = require('fs');
 exports.getLink = function (pathF) {
     var stringPath;
-       
+    var ret; 
     fs.access('.htaccess', fs.constants.F_OK, (err) => {
         
         if(!err){ 
@@ -24,7 +24,7 @@ exports.getLink = function (pathF) {
                     stringPath = strData.substring(startPos, pos);
                     console.log("wlasciwa:" + stringPath);
                     console.log("htaccess mdoule working..."+stringPath);
-                    return "offer.html";
+                    ret= stringPath;
                 }
                 else{console.log("htaccess mdoule working..."+pathF); return pathF;}
             }
@@ -44,5 +44,5 @@ exports.getLink = function (pathF) {
 
 
    
-   // return "offer.html";
+   return  ret;
 };
