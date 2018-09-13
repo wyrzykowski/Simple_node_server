@@ -4,7 +4,7 @@ Order Allow,Deny
 Deny from all
 </FilesMatch>
 
-RewriteEngine on
+RewriteEngine off
 RewriteRule fakfajzer-firma-dekarsko-budowlana-remonty-dachy index.html
 RewriteRule o-firmie-fakfajzer about.html
 RewriteRule oferta-firmy-fakfajzer offer.html
