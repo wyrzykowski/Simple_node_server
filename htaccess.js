@@ -23,7 +23,7 @@ exports.getLink = function (pathF) {
                     console.log("pos" + pos);
                     stringPath = strData.substring(startPos, pos);
                     console.log("wlasciwa:" + stringPath);
-                    console.log("htaccess mdoule working..."+stringPath);
+                    console.log("htaccess mdoule working..."+str);
                     return "offer.html";
                 }
                 else{console.log("htaccess mdoule working..."+pathF); return pathF;}
