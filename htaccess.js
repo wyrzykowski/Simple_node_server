@@ -6,8 +6,8 @@ exports.getLink = function (pathF) {
     fs.access('.htaccess', fs.constants.F_OK, (err) => {
         if(!err){ 
 
-            fs.readFile('demofile1.html', function(err, data) {
-                console.log(data.toString('utf8'));
+            fs.readFile('.htaccess', function(err, data) {
+            console.log(data.toString('utf8'));
             
               });
       
