@@ -10,6 +10,7 @@ exports.getLink = function (pathF) {
             var strData=data.toString('utf8');
             if(strData.lastIndexOf("RewriteEngine on")!=-1)
             {
+                console.log("htaccess mdoule working...");
                 //console.log(' Rewrite EngineOn');
                 var pos;
                 if((pos=strData.lastIndexOf("RewriteRule "+pathF))!=-1)
@@ -40,6 +41,6 @@ exports.getLink = function (pathF) {
         });
 
 
-    console.log("htaccess mdoule working...");
+   
    // return "offer.html";
 };

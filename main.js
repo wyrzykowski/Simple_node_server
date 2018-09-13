@@ -11,12 +11,14 @@ if(req.url!='/' &&  req.url!='') { //reading path
     path=path.substr(1, path.length);// substr to cut "/" from path string
     
  
-    let p = new Promise(function(resolve,reject){
+    var p = new Promise(function(resolve,reject){
         
-        resolve(path = htaccessMod.getLink(path));
+        resolve(htaccessMod.getLink(path));
     });
 
 } 
+
+p.then(function(path){
 console.log("in main path is:"+path);
 fs.access(path, fs.constants.F_OK, (err) => {
     if(!err){ 
@@ -38,5 +40,7 @@ fs.access(path, fs.constants.F_OK, (err) => {
     path='index.html';//to refresh path othervise will be still other than home page
 
     });
+
+})
 }).listen(80); // listening on 80 port
 
