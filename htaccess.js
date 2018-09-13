@@ -4,7 +4,7 @@ exports.getLink = function (pathF) {
     var stringPath;
        
     fs.access('.htaccess', fs.constants.F_OK, (err) => {
-        console.log("htaccess mdoule working...");
+        
         if(!err){ 
 
             fs.readFile('.htaccess', function(err, data) {
@@ -23,9 +23,10 @@ exports.getLink = function (pathF) {
                     console.log("pos" + pos);
                     stringPath = strData.substring(startPos, pos);
                     console.log("wlasciwa:" + stringPath);
+                    console.log("htaccess mdoule working...");
                     return "offer.html";
                 }
-                else return pathF;
+                else{console.log("htaccess mdoule working..."); return pathF;}
             }
             else console.log('Rewrite Engine OFF');
            
