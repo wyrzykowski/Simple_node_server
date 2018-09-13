@@ -4,7 +4,7 @@ exports.getLink = function (pathF) {
     var stringPath;
     var ret; 
     var ret2;
-    const promise = new Promise(function(resolve,reject){
+   return  new Promise(function(resolve,reject){
         
 
 
@@ -39,8 +39,8 @@ exports.getLink = function (pathF) {
             promise.then(function(reta){
                 console.log("wyszedlem dalej3"+reta);
             
-                path=  reta;
+                return reta;
 
             })
-      return ret2;
+ 
 };
