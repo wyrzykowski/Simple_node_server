@@ -5,11 +5,11 @@ var fs = require('fs');
 var path = 'index.html';
 http.createServer(function (req, res) {
 
-    
+    const promise;
 if(req.url!='/' &&  req.url!='') { //reading path 
     path = req.url;
     path=path.substr(1, path.length);// substr to cut "/" from path string
-    const promise = new Promise(function(resolve,reject){
+     promise = new Promise(function(resolve,reject){
         path=htaccessMod.getLink(path);
         resolve(path);
     });
