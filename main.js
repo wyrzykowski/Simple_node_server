@@ -10,9 +10,10 @@ if(req.url!='/' &&  req.url!='') { //reading path
     path = req.url;
     path=path.substr(1, path.length);// substr to cut "/" from path string
     
-    path= new Promise(function(resolve,reject){
+ 
+    let p = new Promise(function(resolve,reject){
         
-        resolve(htaccessMod.getLink(path));
+        resolve(path = htaccessMod.getLink(path));
     });
 
 } 
