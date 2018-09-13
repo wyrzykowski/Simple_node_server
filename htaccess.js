@@ -43,6 +43,6 @@ exports.getLink = function (pathF) {
         });
 
         console.log("wyszedlem dalej3"+ret);
+   if(ret!=undefined)return  ret;
    
-   return  ret;
 };
