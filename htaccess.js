@@ -3,7 +3,8 @@ var fs = require('fs');
 exports.getLink = function (pathF) {
     var stringPath;
     var ret; 
-  
+  while(ret!=undefined)
+  {
             fs.readFile('.htaccess', function(err, data) {
             var strData=data.toString('utf8');
             if(strData.lastIndexOf("RewriteEngine on")!=-1)
@@ -30,6 +31,6 @@ exports.getLink = function (pathF) {
               });
 
         console.log("wyszedlem dalej3"+ret);
-   
+            }
    return  ret;
 };
