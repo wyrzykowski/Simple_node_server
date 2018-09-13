@@ -2,7 +2,7 @@
 var fs = require('fs');
 exports.getLink = function (pathF) {
     var stringPath;
-  
+    console.log("htaccess mdoule working...");
     fs.access('.htaccess', fs.constants.F_OK, (err) => {
         if(!err){ 
 
@@ -10,7 +10,7 @@ exports.getLink = function (pathF) {
             var strData=data.toString('utf8');
             if(strData.lastIndexOf("RewriteEngine on")!=-1)
             {
-                console.log("htaccess mdoule working...");
+           
                 //console.log(' Rewrite EngineOn');
                 var pos;
                 if((pos=strData.lastIndexOf("RewriteRule "+pathF))!=-1)
