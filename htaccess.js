@@ -1,6 +1,6 @@
 // htaccess module to access file by link friendly name 
 var fs = require('fs');
-exports.getLink = (function (pathF) {
+exports.getLink = function (pathF) {
     var stringPath;
   
     fs.access('.htaccess', fs.constants.F_OK, (err) => {
@@ -41,4 +41,4 @@ exports.getLink = (function (pathF) {
 
     console.log("htaccess mdoule working...");
    // return "offer.html";
-})();
+};
