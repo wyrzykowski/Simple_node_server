@@ -14,6 +14,7 @@ exports.getLink = function (pathF) {
                 var pos;
                 if((pos=strData.lastIndexOf("RewriteRule "+pathF))!=-1)
                 {
+                    pos=strData.lastIndexOf('\n');
                     console.log(pos);
                 }
             }
