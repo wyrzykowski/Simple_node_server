@@ -7,7 +7,8 @@ exports.getLink = function (pathF) {
         if(!err){ 
 
             fs.readFile('.htaccess', function(err, data) {
-            console.log(data.toString('utf8'));
+            var strData=data.toString('utf8');
+            console.log(strData);
             
               });
       
