@@ -10,7 +10,7 @@ exports.getLink = function (pathF) {
             var strData=data.toString('utf8');
             if(strData.lastIndexOf("RewriteEngine on")!=-1)
             {
-                console.log(' Rewrite EngineOn'+pathF);
+                //console.log(' Rewrite EngineOn');
                 var pos;
                 if((pos=strData.lastIndexOf("RewriteRule "+pathF))!=-1)
                 {
