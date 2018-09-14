@@ -16,18 +16,14 @@ exports.getLink = function (pathF) {
                 {
                   
                     var startPos = pos+("RewriteRule "+pathF).length+1;
-                    console.log("startPos" + startPos);
                     pos=strData.indexOf('\n',startPos);
-                    console.log("pos" + pos);
                     stringPath = strData.substring(startPos, pos);
-                    console.log("wlasciwa:" + stringPath);
-                    console.log("htaccess mdoule working..."+stringPath);
+                   // console.log("htaccess mdoule working..."+stringPath);
                     ret= stringPath; // wartosc do zwrocenia
                 }
                 else{console.log("htaccess mdoule working..."+pathF);    ret = pathF;}
             } else console.log('Rewrite Engine OFF');
            
-            console.log("wyszedlem dalej"+ret);
             if(ret!=undefined) resolve(ret); 
               });
   
