@@ -9,7 +9,7 @@ http.createServer(function (req, res) {
 if(req.url!='/' &&  req.url!='') { //reading path 
     path = req.url;
     path=path.substr(1, path.length);// substr to cut "/" from path string
-    const promise = new Promise(function(resolve,reject){ //musi przerobic ten link wiec musi byc synchronicznie
+    const promise = new Promise(function(resolve,reject){
         path=htaccessMod.getLink(path);
         console.log("zwrocilem:"+path);
         if(path!=undefined)
@@ -25,7 +25,7 @@ if(req.url!='/' &&  req.url!='') { //reading path
 
 
 
-promise.then(function(path){ //jesli spelnni sie oboetnica i resolve cos zwroci albo wgl obietnica sie nie stowrzy
+promise.then(function(path){
 console.log("in main path is:"+path);
 fs.access(path, fs.constants.F_OK, (err) => {
     if(!err){ 
