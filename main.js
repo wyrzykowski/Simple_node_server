@@ -48,7 +48,7 @@ fs.access(path, fs.constants.F_OK, (err) => {
             res.end()
         });
     }
-    path='index.html';//to refresh path othervise will be still other than home page
+    
 
     });
 });
