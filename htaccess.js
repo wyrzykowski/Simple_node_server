@@ -6,7 +6,7 @@ exports.getLink = function (pathF) {
      return  new Promise(function(resolve,reject){
 
             fs.readFile('.htaccess', function(err, data) {
-                if(err) console.log("no cos poszlo nie tak");
+                if(err){ console.log("no cos poszlo nie tak");ret=pathF}
                 else
                 {
                     var strData=data.toString('utf8');
