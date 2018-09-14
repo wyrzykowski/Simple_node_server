@@ -34,10 +34,11 @@ fs.access(path, fs.constants.F_OK, (err) => {
      fs.readFile(path, function(err, data) {
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(data);
-        res.end()
+        res.end();
         });
     }
     else{ // if error 
+        console.log("error:"+err)
         path='404.html';
         fs.readFile(path, function(err, data) {
             res.writeHead(200, {'Content-Type': 'text/html'});
