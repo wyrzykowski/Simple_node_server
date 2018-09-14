@@ -9,7 +9,7 @@ http.createServer(function (req, res) {
 if(req.url!='/' &&  req.url!='') { //reading path 
     path = req.url;
     path=path.substr(1, path.length);// substr to cut "/" from path string
-    const promise = new Promise(function(resolve,reject){
+    var promise = new Promise(function(resolve,reject){
         path=htaccessMod.getLink(path);
         console.log("zwrocilem:"+path);
         if(path!=undefined)
@@ -21,7 +21,7 @@ if(req.url!='/' &&  req.url!='') { //reading path
     });
 } else{
     
-    const promise = new Promise(function(resolve,reject){
+    var promise = new Promise(function(resolve,reject){
         path='index.html';//to refresh path othervise will be still other than home page 
         resolve(path);
         });
