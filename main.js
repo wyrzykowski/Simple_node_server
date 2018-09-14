@@ -16,6 +16,7 @@ if(req.url!='/' &&  req.url!='') { // jesli nie sama domena to nadal index.html
         {
        // console.log("zwrocilem:"+path);
         resolve(htaccessMod.getLink(path));
+
         }
        
     });
@@ -27,7 +28,8 @@ if(req.url!='/' &&  req.url!='') { // jesli nie sama domena to nadal index.html
 }
 
 promise.then(function(path){
-console.log("in main path is:"+path);
+console.log("in main path is: "+path);
+
 fs.access(path, fs.constants.F_OK, (err) => {
     if(!err){ 
        

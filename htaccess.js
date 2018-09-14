@@ -20,13 +20,13 @@ exports.getLink = function (pathF) {
                         
                             var startPos = pos+("RewriteRule "+pathF).length+1;
                             pos=strData.indexOf('\n',startPos);
-                            stringPath = strData.substring(startPos, pos);
+                            stringPath = strData.substring(startPos, pos-1);//WARNING!!!! CHANGED HERE To -1 becouse of windiws other endline coding
                         // console.log("htaccess mdoule working..."+stringPath);
                             ret= stringPath; // wartosc do zwrocenia
                         } else{console.log("htaccess mdoule working..."+pathF);    ret = pathF;}
                     } else console.log('Rewrite Engine OFF');
                 
-                    if(ret!=undefined) resolve(ret); 
+                    if(ret!=undefined){console.log(ret.length);resolve(ret)}; 
                 }
               });
             
