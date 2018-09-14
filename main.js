@@ -4,7 +4,7 @@ var htaccessMod = require('./htaccess.js');
 var fs = require('fs');
 var path = 'index.html';
 http.createServer(function (req, res) {
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 if(req.url!='/' &&  req.url!='') { // jesli nie sama domena to nadal index.html
     path = req.url;
