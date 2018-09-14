@@ -6,6 +6,9 @@ exports.getLink = function (pathF) {
      return  new Promise(function(resolve,reject){
 
             fs.readFile('.htaccess', function(err, data) {
+                if(err) console.log("no cos poszlo nie tak");
+                else
+                {
                     var strData=data.toString('utf8');
                     if(strData.lastIndexOf("RewriteEngine on")!=-1)
                     {
@@ -24,6 +27,7 @@ exports.getLink = function (pathF) {
                     } else console.log('Rewrite Engine OFF');
                 
                     if(ret!=undefined) resolve(ret); 
+                }
               });
             
             })
